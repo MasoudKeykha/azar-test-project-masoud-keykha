@@ -1,6 +1,14 @@
 @layer theme, base, mui, components, utilities;
 @import "tailwindcss";
 
+@layer base {
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+}
+
 @theme inline {
   --color-background: var(--mui-palette-background-default);
   --color-foreground: var(--mui-palette-text-primary);

@@ -2,16 +2,8 @@ import Image from "next/image";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
+import { services } from "@/app/_home/services/content";
 import { contactEmail, phoneHref, shellContent } from "./shared";
-
-const services = [
-  "خودروهای سواری",
-  "کشنده و کامیون",
-  "حمل و نقل",
-  "واردات، صادرات و ترخیص",
-  "انبارداری و سردخانه گمرکی",
-  "ثبت سفارش و امور ارزی",
-];
 
 const contacts = [
   { icon: "email", label: "پست الکترونیکی", text: contactEmail, href: `mailto:${contactEmail}`, dir: "ltr" },
@@ -127,13 +119,17 @@ export function SiteFooter() {
             </Box>
           </Box>
 
-          <Box id="services" component="nav" aria-label="منوی پانوشت" sx={{ scrollMarginTop: 112, bgcolor: "surface.inverseRaised", borderRadius: "12px", px: 7, py: 4 }}>
+          <Box component="nav" aria-label="منوی پانوشت" sx={{ bgcolor: "surface.inverseRaised", borderRadius: "12px", px: 7, py: 4 }}>
             <Box
               component="ul"
               sx={{ display: "flex", flexWrap: "wrap", gap: { xs: 3, md: 6 }, listStyle: "none", fontSize: "0.875rem", color: muted }}
             >
               <li><Box component="a" href="/#top" aria-current="page" sx={{ ...textLink, color: "common.white" }}>‹ صفحه اصلی</Box></li>
-              {services.map((label) => <li key={label}>{label}</li>)}
+              {services.map(({ id, title }) => (
+                <li key={id}>
+                  <Box component="a" href={`/#${id}`} sx={textLink}>{title}</Box>
+                </li>
+              ))}
             </Box>
           </Box>
 
