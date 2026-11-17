@@ -127,7 +127,7 @@ export function SiteFooter() {
             </Box>
           </Box>
 
-          <Box component="nav" aria-label="منوی پانوشت" sx={{ bgcolor: "surface.inverseRaised", borderRadius: "12px", px: 7, py: 4 }}>
+          <Box id="services" component="nav" aria-label="منوی پانوشت" sx={{ scrollMarginTop: 112, bgcolor: "surface.inverseRaised", borderRadius: "12px", px: 7, py: 4 }}>
             <Box
               component="ul"
               sx={{ display: "flex", flexWrap: "wrap", gap: { xs: 3, md: 6 }, listStyle: "none", fontSize: "0.875rem", color: muted }}
